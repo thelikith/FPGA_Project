@@ -48,7 +48,8 @@ Once we implemented the design in Verilog, we successfully simulated and verifie
 ## Results:
 ### 1. Max Clock Frequency Achieved:
 ![Screenshot 2024-11-08 155240](https://github.com/user-attachments/assets/b592fa90-9870-41fd-9e71-f26b312bb3cb)
-![Screenshot 2024-11-08 155321](https://github.com/user-attachments/assets/8abf1d6c-1a96-41c5-80a9-e4ed6bda0952)
+![Screenshot 2024-11-08 155226](https://github.com/user-attachments/assets/aadcf7d0-78bf-4b22-ba09-74c37095eeb6)
+
 
   $$
   \text{Max Freq} = \frac{1}{T_{\text{clk}} - W_{\text{NS}}} = \frac{1}{(4.5 - 0.13) \, \text{ns}} = 228.23  \text{MHz}
