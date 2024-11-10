@@ -279,5 +279,6 @@ print()
 print('Posit_Result_1 ',posit_result1)
 print('Posit_Result_2 ',posit_result2)
 
-Error = (posit_result1 - posit_result2)/posit_result1
-print('Error = ', Error)
+Error = (posit_result1 - posit_result2)/posit_result1 * 100
+print('Error % = ', Error)
+
