@@ -19,7 +19,7 @@ $$
 Where:
 
 $$
-\text{useed} = (2^{\text{es}})^k
+\text{useed} = 2^{2^{es}}
 $$
 
 
@@ -36,11 +36,13 @@ Once we implemented the design in Verilog, we successfully simulated and verifie
 1.	Non-synthesizable loop variables: To resolve this, we replaced the loop variable with its maximum value and used a conditional if statement within the loop to eliminate the error.
 2.	Unsupported break statement in Verilog: Since the break statement is not supported in Verilog, we replaced it with i = -1; which causes the loop to exit as intended.
    
+**Error Screenshots:**  
 ![WhatsApp Image 2024-11-08 at 21 01 41_fa7f6cc8](https://github.com/user-attachments/assets/33edb41b-fdf3-4f3f-adc2-2d3668850cce)
 ![Screenshot 2024-11-08 144308](https://github.com/user-attachments/assets/f8c28845-18de-4026-80ae-afa93992bf88)
 
+**Schematic:**
+![file_2024-11-10_12 23 56](https://github.com/user-attachments/assets/989eed84-6092-4656-9767-3615f0e82aab)
 
-![Screenshot 2024-11-08 150632](https://github.com/user-attachments/assets/17b2dd91-7f3f-416d-af8c-f9a728d49685)
 
 
 ## Results:
@@ -54,8 +56,9 @@ Once we implemented the design in Verilog, we successfully simulated and verifie
 
 
 ### 2. Resource Utilization:
-![image](https://github.com/user-attachments/assets/0ba7240e-bc9a-4ae3-9d11-7e5168ef921a)
-![image](https://github.com/user-attachments/assets/3bad94e3-96d7-43ae-9d13-ab6312611719)
+![file_2024-11-10_12 22 25](https://github.com/user-attachments/assets/0538af11-911a-4059-8911-a43838cbee82)
+![file_2024-11-10_12 25 55](https://github.com/user-attachments/assets/f7a48f40-5fe2-47c5-bc34-0001b15b9da6)
+Comparison with floating point (**[from reference paper](https://ieeexplore.ieee.org/document/9401158)**).
 
 
     
@@ -67,22 +70,26 @@ Based on the simulation results, we can conclude that there is no latency presen
 
     
 ### 4. Implemented Layout Diagram:
-![Screenshot 2024-11-08 151303](https://github.com/user-attachments/assets/2332e741-0f6e-454d-8852-3d335b079bf9)
-![Screenshot 2024-11-08 151330](https://github.com/user-attachments/assets/98555af7-230c-49e5-a77c-2fea40e2d1e9)
+![file_2024-11-10_12 21 31](https://github.com/user-attachments/assets/a18f3235-24be-498c-bd20-9e1f2e47512d)
+![file_2024-11-10_12 23 25](https://github.com/user-attachments/assets/79cd3227-0d41-4b6e-a877-697c4dde948a)
+
 
 
 ### 5. Max throughput achievable
 
 $$
-\text{Max Throughput} = \frac{1}{T_{\text{clk}} \times \text{Max Utilization Percentage}} = \frac{1}{(4.5 \text{ns} \times 3.8)} \times 100
+\text{Max Throughput} = \frac{1}{T_{\text{clk}} \times \text{Max Utilization Percentage}} = \frac{1}{(4.5 \text{ns} \times 36.22)} \times 100
 $$
 
 
 $$
-\text{Max Throughput} = 5.84 \times 10^9 \text{Hz} = 5.84 \text{GHz}
+\text{Max Throughput} = 6.13 \times 10^6 \text{Hz} = 6.13 \text{MHz}
 $$
 
-### 6. Error Calculation
+### 6. Bitstream Result on ILA
+![file_2024-11-10_11 52 34](https://github.com/user-attachments/assets/84b966cb-0dd1-45dc-b791-0f0d4a937631)
+
+### 7. Error Calculation
 Error calculation is performed using a Python program
 ![Screenshot 2024-11-10 112011](https://github.com/user-attachments/assets/229dfe74-42ed-4693-9203-ddb56cfbbee5)
 
