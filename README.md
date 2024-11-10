@@ -58,7 +58,11 @@ Once we implemented the design in Verilog, we successfully simulated and verifie
 ### 2. Resource Utilization:
 ![file_2024-11-10_12 22 25](https://github.com/user-attachments/assets/0538af11-911a-4059-8911-a43838cbee82)
 ![file_2024-11-10_12 25 55](https://github.com/user-attachments/assets/f7a48f40-5fe2-47c5-bc34-0001b15b9da6)
+
 Comparison with floating point (**[from reference paper](https://ieeexplore.ieee.org/document/9401158)**).
+
+![image](https://github.com/user-attachments/assets/b87ab0ac-457d-4a6f-831f-04869ae8e65b)
+
 
 
     
