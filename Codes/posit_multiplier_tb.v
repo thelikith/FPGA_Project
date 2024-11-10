@@ -6,7 +6,7 @@ module posit_multiplier_tb;
     reg clk;
     reg [WIDTH-1:0] a;
     reg [WIDTH-1:0] b;
-//    wire [WIDTH-1:0] res;
+    wire [WIDTH-1:0] res;
 
     posit_multiplier #(WIDTH, ES) uut (
         .clk(clk),
@@ -131,8 +131,8 @@ module posit_multiplier_tb;
         b = 32'b00011100100100000000000000000000;
         #10;
 
-        a = 32'b00111100100000100000000000000000;
-        b = 32'b00111100100000100000000000000000;
+        a = 32'b10111100100000100000000000000000;
+        b = 32'b10111100100000100000000000000000;
         #10;
 
         a = 32'b00011100100100000000000000000000;
