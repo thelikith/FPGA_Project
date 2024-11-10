@@ -3,9 +3,10 @@ module posit_multiplier #(
     parameter WIDTH = 32,
     parameter ES = 3
 ) (
-    input wire clk,
-    input wire [31:0] a,
-    input wire [31:0] b
+    input wire clk
+//    input wire [31:0] a,
+//    input wire [31:0] b,
+//    output wire [31:0] res
 
 );
 vio_0 your_instance_name (
@@ -14,6 +15,14 @@ vio_0 your_instance_name (
   .probe_out1(b)  // output wire [31 : 0] probe_out1
 );
 
+ila_0 yoinstance_name (
+	.clk(clk), // input wire clk
+
+	.probe0(res) // input wire [31:0]  probe2
+);
+    wire [31:0] a;
+    wire [31:0] b;
+    wire [31:0] res;
     wire sign_a, sign_b, sign_result;
     wire signed [5:0] regime_a, regime_b;
     wire [ES-1:0] exp_a, exp_b;
@@ -220,7 +229,7 @@ module posit_multiply #(
             mult=frac_b;            
             sign_result = sign_a ^ sign_b;
 
-            regime_sum = {0'b1,regime_a} + {0'b1,regime_b};
+            regime_sum = {1'b0,regime_a} + {1'b0,regime_b};
             exp_sum = exp_a + exp_b;
 
             partial_product = 0;
@@ -333,14 +342,14 @@ module posit_encoder #(
                 result = result+1'b0; 
             end else begin
                 for (i = 0;  i <=26; i = i + 1) begin
-                    if (-m>0)begin
+                    if (m>0)begin
                         result=result<<1;
-                        result=result+1'b1;
+                        result=result+1'b0;
                    end
                    else begin
                         result=result;
                     end
-                    m=m+1;
+                    m=m-1;
                 end
                 result=result<<1;
                 result = result+1'b1; 
